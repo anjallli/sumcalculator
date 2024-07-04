@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    
+    <!-- Style -->
+    <link rel="stylesheet" href="style.css">
+
+    <title>Metzeal task</title>
+    <script src="script.js" defer></script>
+
+</head>
+<body>
+
+    <div class="container-fluid">
+        <div class="row text-center">
+        <h1 class="display-4 fw-bold pt-5 px-5">Sum Calculator</h1>
+        <label class="pt-5 px-5">Enter numbers separated by commas</label>
+        
+            <div class="text-center pt-2">
+            <input type="text" id="numberInput" placeholder="e.g. 1,2,3" style="border-radius: 10px; width: 60%; background: linear-gradient(to right, #b52aae, #ed478f); border: none; color: white; padding-top: 2%;">
+            <br>
+            </div>
+
+            <div class="text-center mt-5">
+            <button id="calbutton" onclick="calculateSum()" style="background: linear-gradient(to left, rgb(119, 61, 245), rgb(32, 154, 215)); border-radius: 25px; width: 20%; border: none; color: white; padding: 1%;">Calculate</button>
+            <h5 id="result" style="padding-top: 2%;"></h5>
+            </div>
+        </div>
+    </div>
+
+
+    <script type="module">
+        
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-app.js";
+        import { getDatabase, ref, set, child } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-database.js";
+      
+      
+        const firebaseConfig = {
+          apiKey: "AIzaSyBvaQj1OfsFgkztUkMyAleoV-162rVsaO4",
+          authDomain: "sumcalculatordata.firebaseapp.com",
+          projectId: "sumcalculatordata",
+          storageBucket: "sumcalculatordata.appspot.com",
+          messagingSenderId: "535417256344",
+          appId: "1:535417256344:web:8fb9cd300e925631add3ed"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+      
+        const db = getDatabase(app);
+      
+        document.getElementById("calbutton").addEventListener('click', function(e){
+      
+          e.preventDefault();
+      
+          set(ref(db, 'user/' + document.getElementById("numberInput").value),
+          {
+              Numbers: document.getElementById("numberInput").value,
+              TotalSum: document.getElementById("calbutton").value
+
+          })
+          
+      
+          alert("Data Saved");
+        })
+          </script>
+
+
+</body>
+</html>

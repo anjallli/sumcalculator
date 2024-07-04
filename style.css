@@ -1,0 +1,9 @@
+.container-fluid{
+    background-image: linear-gradient(rgb(247, 216, 216),rgb(168, 168, 245));
+    padding-top: 6%;
+    padding-bottom: 40%;
+}
+
+body{
+    overflow: hidden;
+}
