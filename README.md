@@ -1,9 +1,8 @@
 # Sum Calculator
 
-This is a sum calculator that takes list of numbers by user and calculate its total sum and displays it.
-I have used html, css, javascript and vs code for this web-based aaplication. And for database i have use google firebase.
-I have tried to solves as many steps as possible, thank you for this opportunity.
-
+A simple and user-friendly web-based Sum Calculator application that allows users to enter a list of numbers and instantly calculate the total sum.
+Built using HTML, CSS, and JavaScript in VS Code, with Google Firebase used for database integration and data management.
+This project was completed as a task assignment for a company, where I focused on implementing the functionality efficiently and solving as many requirements as possible.
 
 Link: https://anjallli.github.io/sumcalculator/
 
